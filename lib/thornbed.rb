@@ -9,7 +9,12 @@ OEmbed::Providers.register_all
 
 module Thornbed
   def self.get(url)
-    res = OEmbed::Providers.get(url)
-    res.fields
+    begin
+      res = OEmbed::Providers.get(url)
+      res.fields
+    rescue OEmbed::NotFound
+      res = Thornbed::Providers.get(url)
+    end
+
   end
 end
