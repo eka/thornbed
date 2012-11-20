@@ -14,6 +14,7 @@ describe "QuickMeme" do
     quickmeme.valid?('http://www.quickmeme.com/meme/353dum/').should be_true
     quickmeme.valid?('http://qkme.me/353i1m?id=189959962').should be_true
     quickmeme.valid?('http://www.quickmeme.com/meme/3rt124/#by=ad').should be_true
+    quickmeme.valid?('http://www.quickmeme.com/meme/3rtne7/').should be_true
     quickmeme.valid?('http://qkme.me/353i1ma').should be_false
     quickmeme.valid?('http://www.quickmeme.com/meme/353duma/').should be_false
     quickmeme.valid?('http://i.qkme.me/353duma.jpg').should be_false
@@ -35,6 +36,9 @@ describe "QuickMeme" do
 
     res = quickmeme.get('http://qkme.me/353dum')
     res.should include(url: 'http://i.qkme.me/353dum.jpg')
+
+    res = quickmeme.get('http://www.quickmeme.com/meme/3rtne7/')
+    res.should include(url: 'http://i.qkme.me/3rtne7.jpg')
 
     lambda { quickmeme.get('http://qkme.me/353i1ma') }.should raise_error(Thornbed::NotValid)
     lambda { quickmeme.get('http://www.quickmeme.com/meme/353duma/') }.should raise_error(Thornbed::NotValid)
