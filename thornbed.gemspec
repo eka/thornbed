@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Esteban (Eka) Feldman"]
   gem.email         = ["esteban.feldman@gmail.com"]
   gem.description   = %q{Thin OEmbed wrapper}
-  gem.summary       = %q{Thin OEmbed wrapper}
+  gem.summary       = %q{Thornbed provides a single interface to get embeddable content from many sites, even sites with no OEmbed support.}
   gem.homepage      = "https://github.com/eka/thornbed/"
 
   gem.files         = `git ls-files`.split($/)
