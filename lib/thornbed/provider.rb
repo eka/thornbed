@@ -1,3 +1,5 @@
+require "thornbed/errors"
+
 module Thornbed
   module Providers
     class Provider
@@ -23,7 +25,7 @@ module Thornbed
     def self.get(url)
       providers = Thornbed::Providers::Provider.providers
       provider = providers.detect { |p| p.new.valid?(url) }
-      raise Thornbed::Error::NotFound if provider.nil?
+      raise Thornbed::NotFound, url if provider.nil?
       provider.new.get(url)
     end
   end
