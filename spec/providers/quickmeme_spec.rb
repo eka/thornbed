@@ -13,6 +13,7 @@ describe "QuickMeme" do
     quickmeme.valid?('http://t.qkme.me/353dum.jpg').should be_true
     quickmeme.valid?('http://www.quickmeme.com/meme/353dum/').should be_true
     quickmeme.valid?('http://qkme.me/353i1m?id=189959962').should be_true
+    quickmeme.valid?('http://www.quickmeme.com/meme/3rt124/#by=ad').should be_true
     quickmeme.valid?('http://qkme.me/353i1ma').should be_false
     quickmeme.valid?('http://www.quickmeme.com/meme/353duma/').should be_false
     quickmeme.valid?('http://i.qkme.me/353duma.jpg').should be_false

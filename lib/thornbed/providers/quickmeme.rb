@@ -5,7 +5,7 @@ require "thornbed"
 module Thornbed::Providers
   class QuickMeme < Thornbed::Providers::Provider
     def initialize
-      @pattern = /^http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?(\?.*)?$/
+      @pattern = /http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?((\?|#).*)?$/
       @type = "photo"
       @provider_url = "http://quickmeme.com"
     end
