@@ -1,10 +1,8 @@
 require "uri"
 require "thornbed"
 
-
 module Thornbed::Providers
   class Imgur < Thornbed::Providers::Provider
-
     def initialize
       @pattern = /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
       @type = "photo"
@@ -43,7 +41,5 @@ module Thornbed::Providers
         height: nil
       }
     end
-
-
   end
 end
