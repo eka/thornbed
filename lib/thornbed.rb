@@ -4,7 +4,6 @@ require "thornbed/provider"
 require "thornbed/providers"
 require "thornbed/errors"
 
-
 OEmbed::Providers.register_all
 
 module Thornbed
@@ -15,6 +14,5 @@ module Thornbed
     rescue OEmbed::NotFound
       res = Thornbed::Providers.get(url)
     end
-
   end
 end

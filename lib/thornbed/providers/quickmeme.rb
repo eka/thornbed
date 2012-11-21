@@ -1,7 +1,6 @@
 require "uri"
 require "thornbed"
 
-
 module Thornbed::Providers
   class QuickMeme < Thornbed::Providers::Provider
     def initialize
