@@ -22,4 +22,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rb-fsevent", "~> 0.9.2"
   gem.add_development_dependency "terminal-notifier-guard", "~> 1.5.3"
   gem.add_development_dependency "fakeweb", "~> 1.3.0"
+  gem.add_development_dependency "rake", "~> 10.0.2"
 end
