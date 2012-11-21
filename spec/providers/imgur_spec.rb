@@ -4,7 +4,7 @@ require "thornbed"
 
 describe "Imgur" do
   it "should have Imgur as a provider" do
-    Thornbed::Providers.constants.include?(:Imgur).should_not be_false
+    Thornbed::Providers.constants.should include(:Imgur)
   end
 
   it "should accept different imgur urls" do
