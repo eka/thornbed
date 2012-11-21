@@ -1,6 +1,4 @@
 require "spec_helper"
-require "fakeweb"
-require "thornbed"
 
 describe "Imgur" do
   it "should have Imgur as a provider" do
