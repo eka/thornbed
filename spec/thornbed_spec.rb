@@ -1,9 +1,6 @@
 require "spec_helper"
-require "fakeweb"
-require "thornbed"
 
 describe Thornbed do
-
   it "should have a VERSION constant" do
     subject.const_get('VERSION').should_not be_empty
   end
@@ -36,7 +33,4 @@ describe Thornbed do
     imgur = Thornbed::Providers::Imgur.new
     lambda { imgur.get('http://imgur.com/none.jpg') }.should raise_error(Thornbed::NotValid)
   end
-
-
-
 end

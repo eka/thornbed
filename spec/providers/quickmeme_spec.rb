@@ -1,6 +1,4 @@
 require "spec_helper"
-require "fakeweb"
-require "thornbed"
 
 describe "QuickMeme" do
   it "should have QuickMeme as a provider" do
