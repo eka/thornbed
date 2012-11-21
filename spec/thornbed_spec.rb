@@ -1,9 +1,6 @@
 require "spec_helper"
-require "fakeweb"
-require "thornbed"
 
 describe Thornbed do
-
   it "should rely on ruby-oembed when querying for a oembed provider" do
     good_response = {
       "provider_url"=>"http://www.youtube.com/",
@@ -32,7 +29,4 @@ describe Thornbed do
     imgur = Thornbed::Providers::Imgur.new
     lambda { imgur.get('http://imgur.com/none.jpg') }.should raise_error(Thornbed::NotValid)
   end
-
-
-
 end
