@@ -2,6 +2,8 @@
 
 Thornbed provides a single interface to get embeddable content from many sites, even sites with no OEmbed support.
 
+[![Build Status](https://travis-ci.org/eka/thornbed.png)](https://travis-ci.org/eka/thornbed)
+
 ## Installation
 
 Add this line to your application's Gemfile:
