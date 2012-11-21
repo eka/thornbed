@@ -4,10 +4,6 @@ require "thornbed"
 
 describe Thornbed do
 
-  it "should have a VERSION constant" do
-    subject.const_get('VERSION').should_not be_empty
-  end
-
   it "should rely on ruby-oembed when querying for a oembed provider" do
     good_response = {
       "provider_url"=>"http://www.youtube.com/",
