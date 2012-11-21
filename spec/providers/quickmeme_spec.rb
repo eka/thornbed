@@ -4,7 +4,7 @@ require "thornbed"
 
 describe "QuickMeme" do
   it "should have QuickMeme as a provider" do
-    Thornbed::Providers.constants.include?(:QuickMeme).should_not be_false
+    Thornbed::Providers.constants.should include(:QuickMeme)
   end
 
   it "should accept different quickmeme urls" do
