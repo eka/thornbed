@@ -3,6 +3,8 @@ require "thornbed/errors"
 module Thornbed
   module Providers
     class Provider
+      attr_reader :pattern
+
       @providers = []
 
       class << self
@@ -10,11 +12,11 @@ module Thornbed
       end
 
       def self.inherited(subclass)
-        @providers << subclass
+        providers << subclass
       end
 
       def valid?(url)
-        !!@pattern.match(url)
+        !!pattern.match(url)
       end
 
       def provider_name
