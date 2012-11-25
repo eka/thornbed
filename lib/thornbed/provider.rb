@@ -25,8 +25,7 @@ module Thornbed
     end
 
     def self.get(url)
-      providers = Thornbed::Providers::Provider.providers
-      provider = providers.detect { |p| p.new.valid?(url) }
+      provider = Provider.providers.detect { |p| p.new.valid?(url) }
       raise Thornbed::NotFound, url if provider.nil?
       provider.new.get(url)
     end
