@@ -12,7 +12,7 @@ module Thornbed::Providers
     end
 
     def get(url)
-      raise Thornbed::NotValid, url if !self.valid?(url)
+      raise Thornbed::NotValid, url if !valid?(url)
       url = URI.parse(url)
       gallery = /gallery/ =~ url.path
       direct = /\/(\w){5}(\.gif|\.jpg|\.jpeg|\.png)$/.match(url.path)
@@ -34,7 +34,7 @@ module Thornbed::Providers
       {
         url: "http://i.imgur.com/#{pic_id}.#{ptype}",
         type: "#{type}",
-        provider_name: self.provider_name,
+        provider_name: provider_name,
         provider_url: provider_url,
         thumbnail_url: "http://i.imgur.com/#{pic_id}s.#{ptype}",
         version: "1.0",

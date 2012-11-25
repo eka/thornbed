@@ -12,14 +12,14 @@ module Thornbed::Providers
     end
 
     def get(url)
-      raise Thornbed::NotValid, url if !self.valid?(url)
+      raise Thornbed::NotValid, url if !valid?(url)
       url = URI.parse(url)
       ptype = "jpg"
       pic_id = /(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/.match(url.path)
       {
         url: "http://cdn.memegenerator.net/instances/400x/#{pic_id}.#{ptype}",
         type: "#{type}",
-        provider_name: self.provider_name,
+        provider_name: provider_name,
         provider_url: provider_url,
         thumbnail_url: "http://cdn.memegenerator.net/instances/100x/#{pic_id}.#{ptype}",
         version: "1.0",

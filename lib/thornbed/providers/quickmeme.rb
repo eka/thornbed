@@ -12,7 +12,7 @@ module Thornbed::Providers
     end
 
     def get(url)
-      raise Thornbed::NotValid, url if !self.valid?(url)
+      raise Thornbed::NotValid, url if !valid?(url)
       url = URI.parse(url)
       normal = /quickmeme.com/ =~ url.to_s
       direct = /qkme.me/ =~ url.to_s
@@ -28,7 +28,7 @@ module Thornbed::Providers
       {
         url: "http://i.qkme.me/#{pic_id}.#{ptype}",
         type: "#{type}",
-        provider_name: self.provider_name,
+        provider_name: provider_name,
         provider_url: provider_url,
         thumbnail_url: "http://t.qkme.me/#{pic_id}.#{ptype}",
         version: "1.0",
