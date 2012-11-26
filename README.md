@@ -56,4 +56,4 @@ You should inherit from `Thornbed::Providers::Provider`. See imgur.rb for an exa
 
 ## Contributors
 
-[@frodsan](https://github.com/frodsan)
+[frodsan](https://github.com/frodsan)
