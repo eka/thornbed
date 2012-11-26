@@ -3,13 +3,6 @@ require "thornbed"
 
 module Thornbed::Providers
   class Memegenerator < Thornbed::Providers::Provider
-    attr_reader :type, :provider_url
-
-    def initialize
-      @type = "photo"
-      @provider_url = "http://memegenerator.com"
-    end
-
     def pattern
       /^http(s)?:\/\/(cdn\.)?memegenerator\.net\/instance(s)?\/(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/
     end
@@ -21,9 +14,9 @@ module Thornbed::Providers
       pic_id = /(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/.match(url.path)
       {
         url: "http://cdn.memegenerator.net/instances/400x/#{pic_id}.#{ptype}",
-        type: "#{type}",
+        type: "photo",
         provider_name: provider_name,
-        provider_url: provider_url,
+        provider_url: "http://memegenerator.com",
         thumbnail_url: "http://cdn.memegenerator.net/instances/100x/#{pic_id}.#{ptype}",
         version: "1.0",
         page: "http://memegenerator.net/instance/#{pic_id}",

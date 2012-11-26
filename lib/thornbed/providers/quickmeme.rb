@@ -3,13 +3,6 @@ require "thornbed"
 
 module Thornbed::Providers
   class QuickMeme < Thornbed::Providers::Provider
-    attr_reader :type, :provider_url
-
-    def initialize
-      @type = "photo"
-      @provider_url = "http://quickmeme.com"
-    end
-
     def pattern
       /http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?((\?|#).*)?$/
     end
@@ -30,9 +23,9 @@ module Thornbed::Providers
 
       {
         url: "http://i.qkme.me/#{pic_id}.#{ptype}",
-        type: "#{type}",
+        type: "photo",
         provider_name: provider_name,
-        provider_url: provider_url,
+        provider_url: "http://quickmeme.com",
         thumbnail_url: "http://t.qkme.me/#{pic_id}.#{ptype}",
         version: "1.0",
         page: "http://quickmeme.com/#{pic_id}/",
