@@ -3,13 +3,6 @@ require "thornbed"
 
 module Thornbed::Providers
   class Imgur < Thornbed::Providers::Provider
-    attr_reader :type, :provider_url
-
-    def initialize
-      @type = "photo"
-      @provider_url = "http://imgur.com"
-    end
-
     def pattern
       /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
     end
@@ -36,9 +29,9 @@ module Thornbed::Providers
 
       {
         url: "http://i.imgur.com/#{pic_id}.#{ptype}",
-        type: "#{type}",
+        type: "photo",
         provider_name: provider_name,
-        provider_url: provider_url,
+        provider_url: "http://imgur.com",
         thumbnail_url: "http://i.imgur.com/#{pic_id}s.#{ptype}",
         version: "1.0",
         page: "http://imgur.com/#{pic_id}",
