@@ -6,9 +6,12 @@ module Thornbed::Providers
     attr_reader :type, :provider_url
 
     def initialize
-      @pattern = /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
       @type = "photo"
       @provider_url = "http://imgur.com"
+    end
+
+    def pattern
+      /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
     end
 
     def get(url)

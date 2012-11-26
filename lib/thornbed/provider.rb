@@ -3,8 +3,6 @@ require "thornbed/errors"
 module Thornbed
   module Providers
     class Provider
-      attr_reader :pattern
-
       @providers = []
 
       class << self
@@ -13,6 +11,11 @@ module Thornbed
 
       def self.inherited(subclass)
         providers << subclass
+      end
+
+      def pattern
+        raise NotImplementedError,
+          'Subclasses must implement a pattern method'
       end
 
       def valid?(url)

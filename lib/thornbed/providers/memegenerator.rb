@@ -6,9 +6,12 @@ module Thornbed::Providers
     attr_reader :type, :provider_url
 
     def initialize
-      @pattern = /^http(s)?:\/\/(cdn\.)?memegenerator\.net\/instance(s)?\/(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/
       @type = "photo"
       @provider_url = "http://memegenerator.com"
+    end
+
+    def pattern
+      /^http(s)?:\/\/(cdn\.)?memegenerator\.net\/instance(s)?\/(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/
     end
 
     def get(url)
