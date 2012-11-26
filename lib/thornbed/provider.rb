@@ -22,6 +22,10 @@ module Thornbed
       def provider_name
         self.class.to_s.split('::')[-1]
       end
+
+      def get(url)
+        raise NotImplementedError, "Subclasses must implement a get method."
+      end
     end
 
     def self.get(url)

@@ -29,4 +29,9 @@ describe Thornbed do
     imgur = Thornbed::Providers::Imgur.new
     lambda { imgur.get('http://imgur.com/none.jpg') }.should raise_error(Thornbed::NotValid)
   end
+
+  it "should raise an error when pattern is not set" do
+    foo = Thornbed::Providers::Provider.new
+    lambda { foo.get('http://imgur.com/none.jpg') }.should raise_error(NotImplementedError)
+  end
 end
