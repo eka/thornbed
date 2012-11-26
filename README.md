@@ -52,3 +52,8 @@ You should inherit from `Thornbed::Providers::Provider`. See imgur.rb for an exa
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+## Contributors
+
+[@frodsan](https://github.com/frodsan)
