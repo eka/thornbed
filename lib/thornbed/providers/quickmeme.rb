@@ -6,9 +6,12 @@ module Thornbed::Providers
     attr_reader :type, :provider_url
 
     def initialize
-      @pattern = /http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?((\?|#).*)?$/
       @type = "photo"
       @provider_url = "http://quickmeme.com"
+    end
+
+    def pattern
+      /http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?((\?|#).*)?$/
     end
 
     def get(url)
