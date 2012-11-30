@@ -3,8 +3,10 @@ require "thornbed"
 
 module Thornbed::Providers
   class Imgur < Thornbed::Providers::Provider
-    def pattern
-      /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
+    attr_accessor :pattern
+
+    def initialize
+      self.pattern = /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
     end
 
     def get(url)

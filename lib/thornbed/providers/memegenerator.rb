@@ -3,8 +3,10 @@ require "thornbed"
 
 module Thornbed::Providers
   class Memegenerator < Thornbed::Providers::Provider
-    def pattern
-      /^http(s)?:\/\/(cdn\.)?memegenerator\.net\/instance(s)?\/(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/
+    attr_accessor :pattern
+
+    def initialize
+      self.pattern = /^http(s)?:\/\/(cdn\.)?memegenerator\.net\/instance(s)?\/(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/
     end
 
     def get(url)

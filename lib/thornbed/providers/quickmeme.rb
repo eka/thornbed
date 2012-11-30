@@ -3,8 +3,10 @@ require "thornbed"
 
 module Thornbed::Providers
   class QuickMeme < Thornbed::Providers::Provider
-    def pattern
-      /http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?((\?|#).*)?$/
+    attr_accessor :pattern
+
+    def initialize
+      self.pattern = /http(s)?:\/\/(i|t)?(\.)?(www\.)?(quickmeme.com|qkme.me)\/(meme\/)?(\w){6}(\/)?(.jpg)?((\?|#).*)?$/
     end
 
     def get(url)
