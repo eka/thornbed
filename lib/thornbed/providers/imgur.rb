@@ -6,37 +6,28 @@ module Thornbed::Providers
     attr_accessor :pattern
 
     def initialize
-      self.pattern = /^http(s)?:\/\/((i\.)|(www\.))?imgur.com\/(gallery\/)?(\w){5}(s|l|b|m|t)?(\.gif|\.jpg|.jpeg|\.png)?(\?full)?$/
+      self.pattern = /^https?:\/\/(www\.|i\.)?imgur\.com\/(gallery\/)?(?<pid>\w{5,})(s|l|b|m|t)?(?<ptype>\.gif|\.jpg|\.jpeg|\.png)?(\?full)?$/
     end
 
     def get(url)
       raise Thornbed::NotValid, url if !valid?(url)
-      url = URI.parse(url)
-      gallery = /gallery/ =~ url.path
-      direct = /\/(\w){5}(\.gif|\.jpg|\.jpeg|\.png)$/.match(url.path)
-      thumb = /\/(\w){5}(s|l|b|m|t)(\.gif|\.jpg|\.jpeg|\.png)$/.match(url.path)
-      page = /\/(\w){5}$/ =~ url.path
-      ptype = "jpg"
+      res = pattern.match(url)
+      pid = res[:pid]
+      md = /(?<pid>\w{5,})(s|l|b|m|t)$/.match(pid)
+      pid = md[:pid] if md else pid
+      ptype = res[:ptype] || ".jpg"
 
-      if page || gallery
-        pic_id = /(\/gallery\/)?\/(\w)*$/.match(url.path)[0][1..-1]
-      elsif thumb
-        pic_id = thumb[0][1..5]
-      elsif direct
-        pic_id = direct[0][1..5]
-        ptype = /(\.gif|\.jpg|\.jpeg|\.png)$/.match(url.path)[0][1..-1]
-      else
-        raise Thornbed::NotValid, url
-      end
+
+      raise Thornbed::NotValid, url if not pid
 
       {
-        url: "http://i.imgur.com/#{pic_id}.#{ptype}",
+        url: "http://i.imgur.com/#{pid}#{ptype}",
         type: "photo",
         provider_name: provider_name,
         provider_url: "http://imgur.com",
-        thumbnail_url: "http://i.imgur.com/#{pic_id}s.#{ptype}",
+        thumbnail_url: "http://i.imgur.com/#{pid}s#{ptype}",
         version: "1.0",
-        page: "http://imgur.com/#{pic_id}",
+        page: "http://imgur.com/#{pid}",
         width: nil,
         height: nil
       }
