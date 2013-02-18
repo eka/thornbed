@@ -1,9 +1,11 @@
 require "thornbed/errors"
+require "thornbed/version"
 
 module Thornbed
   module Providers
     class Provider
       @providers = []
+      USER_AGENT = "Thornbed/#{Thornbed::VERSION}"
 
       class << self
         attr_reader :providers

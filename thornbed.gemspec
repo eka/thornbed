@@ -17,6 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
   gem.add_runtime_dependency "ruby-oembed", "~> 0.8.7"
+  gem.add_runtime_dependency "httparty", "~> 0.10.2"
   gem.add_development_dependency "rspec", "~> 2.12.0"
   gem.add_development_dependency "guard-rspec", "~> 2.1.1"
   gem.add_development_dependency "rb-fsevent", "~> 0.9.2"
