@@ -65,6 +65,9 @@ describe "Imgur" do
     res = imgur.get('http://imgur.com/0TczaPb')
     res.should include(url: 'http://i.imgur.com/0TczaPb.jpg')
 
+    res = imgur.get('http://i.imgur.com/xQdLBoVl.jpg')
+    res.should include(url: 'http://i.imgur.com/xQdLBoV.jpg')
+
     lambda { imgur.get('http://imgur.com/none') }.should raise_error(Thornbed::NotValid)
     lambda { imgur.get('http://imgur.com/none.jpg') }.should raise_error(Thornbed::NotValid)
     lambda { imgur.get('http://imgur.com/a/pq0N2') }.should raise_error(Thornbed::NotValid)
