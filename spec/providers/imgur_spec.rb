@@ -30,10 +30,10 @@ describe "Imgur" do
     res.should include(url: 'http://i.imgur.com/A0TP9.jpg')
 
     res = imgur.get('http://i.imgur.com/A0TP9.png')
-    res.should include(url: 'http://i.imgur.com/A0TP9.jpg')
+    res.should include(url: 'http://i.imgur.com/A0TP9.png')
 
     res = imgur.get('http://i.imgur.com/A0TP9.gif')
-    res.should include(url: 'http://i.imgur.com/A0TP9.jpg')
+    res.should include(url: 'http://i.imgur.com/A0TP9.gif')
 
     res = imgur.get('http://i.imgur.com/A0TP9.jpg')
     res.should include(url: 'http://i.imgur.com/A0TP9.jpg')
@@ -54,13 +54,13 @@ describe "Imgur" do
     res.should include(url: 'http://i.imgur.com/A0TP9.jpg')
 
     res = imgur.get('http://www.imgur.com/RUUuR.jpeg')
-    res.should include(url: 'http://i.imgur.com/RUUuR.jpg')
+    res.should include(url: 'http://i.imgur.com/RUUuR.jpeg')
 
     res = imgur.get('http://imgur.com/LcbbCHv')
-    res.should include(url: 'http://i.imgur.com/LcbbCHv.png')
+    res.should include(url: 'http://i.imgur.com/LcbbCHv.jpg')
 
     res = imgur.get('http://i.imgur.com/LcbbCHvs.jpg')
-    res.should include(url: 'http://i.imgur.com/LcbbCHv.png')
+    res.should include(url: 'http://i.imgur.com/LcbbCHv.jpg')
 
     res = imgur.get('http://imgur.com/0TczaPb')
     res.should include(url: 'http://i.imgur.com/0TczaPb.jpg')
@@ -75,7 +75,7 @@ describe "Imgur" do
 
   it "should discover Imgur provider" do
     res = Thornbed.get('http://imgur.com/N2IDN')
-    res.should include(url: 'http://i.imgur.com/N2IDN.gif')
+    res.should include(url: 'http://i.imgur.com/N2IDN.jpg')
     res.should include(provider_name: "Imgur")
   end
 end

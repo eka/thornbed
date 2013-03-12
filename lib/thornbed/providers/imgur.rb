@@ -19,21 +19,15 @@ module Thornbed::Providers
       # first get the pseudo id
       md = pattern.match(url)
       pid = md[:pid]
-      # TODO: improve this code
-      if pid.length > 5
-        pid = pid.gsub(/(h|m|l|s)?$/, '')
+
+      # from Alan Schaaf, Founder & CEO, Imgur.com
+      # If the image ID is 6 or 8 characters then it's a thumbnail.
+      if [6,8].include? pid.size
+        pid = pid[0...-1]
       end
-      raise Thornbed::NotValid, url if not pid
-
-      res = HTTParty.get("http://imgur.com/#{pid}?tags", headers: {"User-Agent" => USER_AGENT})
-
-      # now get the real pid and ptype from that page
-      md = /id\=\"nondirect\"[ ]+value\=\"http:\/\/imgur.com\/(?<pid>\w+)/.match(res.body)
-      pid = md[:pid]
 
       raise Thornbed::NotValid, url if not pid
 
-      md = /id\=\"direct\"[ ]+value\=\"http:\/\/i.imgur.com\/\w+(?<ptype>\.jpg|\.jpeg|\.png|\.gif)/.match(res.body)
       ptype = md[:ptype] || ".jpg"
 
       {
