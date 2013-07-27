@@ -23,4 +23,4 @@ tmp
 .rvmrc
 .tags*
 bin/
-build_gemtags.rb
+build_gemtags.rbtags
