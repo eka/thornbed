@@ -15,32 +15,32 @@ describe "Memecrunch" do
   it "should return OEmbed hash for Memecrunch urls" do
     memecrunch = Thornbed::Providers::Memecrunch.new
     res = memecrunch.get("http://memecrunch.com/meme/CHDE/when-browsing-r-new")
-    res.should include(url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
+    res.should include("url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
 
     res = memecrunch.get("http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
-    res.should include(url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
+    res.should include("url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
 
     res = memecrunch.get("http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
-    res.should include(url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
+    res.should include("url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
   end
 
   it "should discover Memecrunch provider" do
     res = Thornbed.get("http://memecrunch.com/meme/CHDE/when-browsing-r-new")
-    res.should include(url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
-    res.should include(thumbnail_url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
-    res.should include(page: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/")
-    res.should include(provider_name: "Memecrunch")
+    res.should include("url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
+    res.should include("thumbnail_url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
+    res.should include("page" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/")
+    res.should include("provider_name" => "Memecrunch")
 
     res = Thornbed.get("http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
-    res.should include(url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
-    res.should include(thumbnail_url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
-    res.should include(page: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/")
-    res.should include(provider_name: "Memecrunch")
+    res.should include("url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
+    res.should include("thumbnail_url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
+    res.should include("page" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/")
+    res.should include("provider_name" => "Memecrunch")
 
     res = Thornbed.get("http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
-    res.should include(url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
-    res.should include(thumbnail_url: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
-    res.should include(page: "http://memecrunch.com/meme/CHDE/when-browsing-r-new/")
-    res.should include(provider_name: "Memecrunch")
+    res.should include("url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png")
+    res.should include("thumbnail_url" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/image.png?w=75")
+    res.should include("page" => "http://memecrunch.com/meme/CHDE/when-browsing-r-new/")
+    res.should include("provider_name" => "Memecrunch")
   end
 end

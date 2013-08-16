@@ -15,13 +15,13 @@ describe "Memegenerator" do
   it "should return OEmbed hash for Memegenerator urls" do
     memegenerator = Thornbed::Providers::Memegenerator.new
     res = memegenerator.get("http://memegenerator.net/instance/30688283")
-    res.should include(url: "http://cdn.memegenerator.net/instances/400x/30688283.jpg")
+    res.should include("url" => "http://cdn.memegenerator.net/instances/400x/30688283.jpg")
   end
 
   it "should discover Memegenerator provider" do
     res = Thornbed.get("http://memegenerator.net/instance/30688283")
-    res.should include(url: "http://cdn.memegenerator.net/instances/400x/30688283.jpg")
-    res.should include(thumbnail_url: "http://cdn.memegenerator.net/instances/100x/30688283.jpg")
-    res.should include(provider_name: "Memegenerator")
+    res.should include("url" => "http://cdn.memegenerator.net/instances/400x/30688283.jpg")
+    res.should include("thumbnail_url" => "http://cdn.memegenerator.net/instances/100x/30688283.jpg")
+    res.should include("provider_name" => "Memegenerator")
   end
 end

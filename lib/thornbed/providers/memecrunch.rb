@@ -18,15 +18,15 @@ module Thornbed::Providers
       slug = res[2]
 
       {
-        url: "http://memecrunch.com/meme/#{pic_id}/#{slug}/image.png",
-        type: "photo",
-        provider_name: provider_name,
-        provider_url: "http://memecrunch.com",
-        thumbnail_url: "http://memecrunch.com/meme/#{pic_id}/#{slug}/image.png?w=75",
-        version: "1.0",
-        page: "http://memecrunch.com/meme/#{pic_id}/#{slug}/",
-        width: nil,
-        height: nil
+        "url" => "http://memecrunch.com/meme/#{pic_id}/#{slug}/image.png",
+        "type" => "photo",
+        "provider_name" => provider_name,
+        "provider_url" => "http://memecrunch.com",
+        "thumbnail_url" => "http://memecrunch.com/meme/#{pic_id}/#{slug}/image.png?w=75",
+        "version" => "1.0",
+        "page" => "http://memecrunch.com/meme/#{pic_id}/#{slug}/",
+        "width" => nil,
+        "height" => nil
       }
     end
   end

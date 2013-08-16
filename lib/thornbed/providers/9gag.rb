@@ -17,15 +17,15 @@ module Thornbed::Providers
       pic_id = url.path == '/fast' ? url.fragment : /(\d+)/.match(url.path)[0]
 
       {
-        url: "http://d24w6bsrhbeh9d.cloudfront.net/photo/#{pic_id}_700b.#{ptype}",
-        type: "photo",
-        provider_name: provider_name,
-        provider_url: "http://9gag.com",
-        thumbnail_url: "http://d24w6bsrhbeh9d.cloudfront.net/photo/#{pic_id}_fbthumbnail.#{ptype}",
-        version: "1.0",
-        page: "http://9gag.com/gag/#{pic_id}",
-        width: nil,
-        height: nil
+        "url" => "http://d24w6bsrhbeh9d.cloudfront.net/photo/#{pic_id}_700b.#{ptype}",
+        "type" => "photo",
+        "provider_name" => provider_name,
+        "provider_url" => "http://9gag.com",
+        "thumbnail_url" => "http://d24w6bsrhbeh9d.cloudfront.net/photo/#{pic_id}_fbthumbnail.#{ptype}",
+        "version" => "1.0",
+        "page" => "http://9gag.com/gag/#{pic_id}",
+        "width" => nil,
+        "height" => nil
       }
     end
   end

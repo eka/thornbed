@@ -21,22 +21,22 @@ describe "QuickMeme" do
   it "should return OEmbed hash for quickmeme urls" do
     quickmeme = Thornbed::Providers::QuickMeme.new
     res = quickmeme.get('http://i.qkme.me/353dum.jpg')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
 
     res = quickmeme.get('http://t.qkme.me/353dum.jpg')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
 
     res = quickmeme.get('http://www.quickmeme.com/meme/353dum/')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
 
     res = quickmeme.get('http://qkme.me/353i1m?id=189959962')
-    res.should include(url: 'http://i.qkme.me/353i1m.jpg')
+    res.should include("url" => 'http://i.qkme.me/353i1m.jpg')
 
     res = quickmeme.get('http://qkme.me/353dum')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
 
     res = quickmeme.get('http://www.quickmeme.com/meme/3rtne7/')
-    res.should include(url: 'http://i.qkme.me/3rtne7.jpg')
+    res.should include("url" => 'http://i.qkme.me/3rtne7.jpg')
 
     lambda { quickmeme.get('http://qkme.me/353i1ma') }.should raise_error(Thornbed::NotValid)
     lambda { quickmeme.get('http://www.quickmeme.com/meme/353duma/') }.should raise_error(Thornbed::NotValid)
@@ -45,23 +45,23 @@ describe "QuickMeme" do
 
   it "should discover Imgur provider" do
     res = Thornbed.get('http://qkme.me/353dum')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
-    res.should include(provider_name: "QuickMeme")
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
+    res.should include("provider_name" => "QuickMeme")
 
     res = Thornbed.get('http://www.quickmeme.com/meme/353dum/')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
-    res.should include(provider_name: "QuickMeme")
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
+    res.should include("provider_name" => "QuickMeme")
 
     res = Thornbed.get('http://t.qkme.me/353dum.jpg')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
-    res.should include(provider_name: "QuickMeme")
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
+    res.should include("provider_name" => "QuickMeme")
 
     res = Thornbed.get('http://qkme.me/353i1m?id=189959962')
-    res.should include(url: 'http://i.qkme.me/353i1m.jpg')
-    res.should include(provider_name: "QuickMeme")
+    res.should include("url" => 'http://i.qkme.me/353i1m.jpg')
+    res.should include("provider_name" => "QuickMeme")
 
     res = Thornbed.get('http://qkme.me/353dum')
-    res.should include(url: 'http://i.qkme.me/353dum.jpg')
-    res.should include(provider_name: "QuickMeme")
+    res.should include("url" => 'http://i.qkme.me/353dum.jpg')
+    res.should include("provider_name" => "QuickMeme")
   end
 end

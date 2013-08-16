@@ -22,20 +22,16 @@ Or install it yourself as:
 
     >> require "thornbed"
     => true
-    >> Thornbed.get("http://instagram.com/p/SOlosmBgoZ/")
-    => {"provider_url"=>"http://instagram.com/",
-     "media_id"=>"328365347227175449_43815385",
-     "title"=>"Smile",
-     "url"=>
-      "http://distilleryimage1.instagram.com/b43af7ce329811e281d822000a1f9682_7.jpg",
-     "author_name"=>"esteban108",
-     "height"=>612,
-     "width"=>612,
-     "version"=>"1.0",
-     "author_url"=>"http://instagram.com/",
-     "author_id"=>43815385,
+    >> Thornbed.get("http://imgur.com/DHe9T")
+    => {"url"=>"http://i.imgur.com/DHe9T.jpg",
      "type"=>"photo",
-     "provider_name"=>"Instagram"}
+     "provider_name"=>"Imgur",
+     "provider_url"=>"http://imgur.com",
+     "thumbnail_url"=>"http://i.imgur.com/DHe9Ts.jpg",
+     "version"=>"1.0",
+     "page"=>"http://imgur.com/DHe9T",
+     "width"=>nil,
+     "height"=>nil}
 
 ## Adding new providers
 

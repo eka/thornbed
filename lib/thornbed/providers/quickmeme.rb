@@ -24,15 +24,15 @@ module Thornbed::Providers
       end
 
       {
-        url: "http://i.qkme.me/#{pic_id}.#{ptype}",
-        type: "photo",
-        provider_name: provider_name,
-        provider_url: "http://quickmeme.com",
-        thumbnail_url: "http://t.qkme.me/#{pic_id}.#{ptype}",
-        version: "1.0",
-        page: "http://quickmeme.com/#{pic_id}/",
-        width: nil,
-        height: nil
+        "url" => "http://i.qkme.me/#{pic_id}.#{ptype}",
+        "type" => "photo",
+        "provider_name" => provider_name,
+        "provider_url" => "http://quickmeme.com",
+        "thumbnail_url" => "http://t.qkme.me/#{pic_id}.#{ptype}",
+        "version" => "1.0",
+        "page" => "http://quickmeme.com/#{pic_id}/",
+        "width" => nil,
+        "height" => nil
       }
     end
   end

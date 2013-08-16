@@ -15,15 +15,15 @@ module Thornbed::Providers
       ptype = "jpg"
       pic_id = /(\d+x\/)?\d+(\.jpg)?(\?[\w\W]*)?$/.match(url.path)
       {
-        url: "http://cdn.memegenerator.net/instances/400x/#{pic_id}.#{ptype}",
-        type: "photo",
-        provider_name: provider_name,
-        provider_url: "http://memegenerator.com",
-        thumbnail_url: "http://cdn.memegenerator.net/instances/100x/#{pic_id}.#{ptype}",
-        version: "1.0",
-        page: "http://memegenerator.net/instance/#{pic_id}",
-        width: nil,
-        height: nil
+        "url" => "http://cdn.memegenerator.net/instances/400x/#{pic_id}.#{ptype}",
+        "type" => "photo",
+        "provider_name" => provider_name,
+        "provider_url" => "http://memegenerator.com",
+        "thumbnail_url" => "http://cdn.memegenerator.net/instances/100x/#{pic_id}.#{ptype}",
+        "version" => "1.0",
+        "page" => "http://memegenerator.net/instance/#{pic_id}",
+        "width" => nil,
+        "height" => nil
       }
     end
   end
