@@ -72,6 +72,9 @@ describe "Imgur" do
     res = imgur.get('http://i.imgur.com/9XPKUJLh.jpg')
     res["url"].must_equal( 'http://i.imgur.com/9XPKUJL.jpg')
 
+    res = imgur.get('http://imgur.com/66SNOva')
+    res["url"].must_equal('http://i.imgur.com/66SNOva.jpg')
+
     lambda { imgur.get('http://imgur.com/none') }.must_raise(Thornbed::NotValid)
     lambda { imgur.get('http://imgur.com/none.jpg') }.must_raise(Thornbed::NotValid)
     lambda { imgur.get('http://imgur.com/a/pq0N2') }.must_raise(Thornbed::NotValid)
