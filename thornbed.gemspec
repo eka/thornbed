@@ -17,12 +17,12 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
-  gem.add_runtime_dependency "ruby-oembed", ">= 0.8.8"
-  gem.add_runtime_dependency "httparty", ">= 0.11.0"
-  gem.add_development_dependency "rspec", "~> 2.12.0"
-  gem.add_development_dependency "guard-rspec", "~> 2.1.1"
-  gem.add_development_dependency "rb-fsevent", "~> 0.9.3"
-  gem.add_development_dependency "terminal-notifier-guard", "~> 1.5.3"
+  gem.add_runtime_dependency "ruby-oembed", ">= 0.8.11"
+  gem.add_runtime_dependency "httparty", ">= 0.13.3"
+  gem.add_development_dependency "minitest", "~> 5.4.3"
+  gem.add_development_dependency "guard-minitest", "~> 2.3.2"
+  gem.add_development_dependency "rb-fsevent", "~> 0.9.4"
+  gem.add_development_dependency "terminal-notifier-guard", "~> 1.6.4"
   gem.add_development_dependency "fakeweb", "~> 1.3.0"
-  gem.add_development_dependency "rake", "~> 10.0.2"
+  gem.add_development_dependency "thor", "~> 0.19.1"
 end
